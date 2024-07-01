@@ -1,0 +1,12 @@
+{
+  "node_modules\\@sanity\\visual-editing\\dist\\_chunks\\index-CCPqf31P.js -> ./Overlays-bQSRS-P9.js": {
+    "id": "node_modules\\@sanity\\visual-editing\\dist\\_chunks\\index-CCPqf31P.js -> ./Overlays-bQSRS-P9.js",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_sanity_visual-editing_dist__chunks_Overlays-bQSRS-P9_js.js"
+    ]
+  },
+  "node_modules\\@sanity\\visual-editing\\dist\\_chunks\\index-CCPqf31P.js -> react-dom/client": {
+    "id": "node_modules\\@sanity\\visual-editing\\dist\\_chunks\\index-CCPqf31P.js -> react-dom/client",
+    "files": []
+  }
+}
