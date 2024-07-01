@@ -3,8 +3,8 @@ import React from 'react';
 import {clsx} from 'clsx';
 import { formatDate } from '@/app/components/blogssection';
 
-export default function Banner({titleImage, title, date, tag}:{titleImage:string, title:string, date:string, tag:string}) {
-  const imageUrl = titleImage;
+export default function Banner({mainImage, title, date, tag}:{mainImage:string, title:string, date:string, tag:string}) {
+  const imageUrl = mainImage;
  
   return (
     <section className="p-[5%] pt-[2%]">
@@ -21,14 +21,14 @@ export default function Banner({titleImage, title, date, tag}:{titleImage:string
           height={197}
           className="pt-[4%] pl-[4%]"
         />
-        <div className="absolute bottom-5 md:bottom-[60px] md:left-[50px] left-5">
+        <div className="absolute bottom-5 md:bottom-[60px] md:left-[50px] left-5 bg-black p-[2%]">
           <div className=" min-w-[130px]  w-max px-10 flex items-center justify-center bg-primary text-light rounded-[29px] text-md  font-demibold py-3 ">
             <span>{tag}</span>
           </div>
           <h1 className="text-light text-[35px] md:text-[64px] lowercase font-secondary ">
             {title} <br className="" />
           </h1>
-          <span className="font-primary text-light">{formatDate(date)}</span>
+          <span className="text-light font-primary">{formatDate(date)}</span>
         </div>
       </div>
     </section>

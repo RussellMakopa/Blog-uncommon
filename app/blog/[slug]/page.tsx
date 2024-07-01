@@ -3,19 +3,19 @@ import { client, urlFor } from "@/app/lib/sanity";
 import Banner from "./banner";
 import Paragraph from "@/app/components/styled/paragraph";
 import Conclusion from "./conclusion";
+import MyPortableText from "@/app/components/PortableText";
 
 async function getData(slug:string) {
   const query = `
-    *[_type == 'blog' && slug.current == '${slug}']{
+     *[_type == 'post' && slug.current == '${slug}']{
   "currentSlug":slug.current,
     title,
-    content,
-    titleImage,
-    smallDescription,
-    tag,
-    "date":_createdAt
-} [0]
-    `;
+    mainImage,
+    author,
+    "category":categories[0]->title,
+    "date":_createdAt,
+    body
+}[0]`;
     const data = await client.fetch(query);
 
     return data;
@@ -27,15 +27,14 @@ export default async function BlogPost({ params }: { params: { slug: string } })
     
   return (
     <>
-      <Banner titleImage={urlFor(data.titleImage).url()} title={data.title} date={data.date} tag={data.tag}  />
-      <div className="p-[5%] px-[10%]">
-        <Paragraph>{data.smallDescription}</Paragraph>
-
-        <div>
-          
-        </div>
-        <Conclusion />
+      <Banner mainImage={urlFor(data.mainImage).url()} title={data.title} date={data.date} tag={data.category}  />
+      <div className="p-[5%] px-[10%] blog-body">
+        <MyPortableText value={data.body} />
       </div>
+        {/* <div className="p-[5%]">
+          
+        <Conclusion />
+      </div> */}
     </>
   );
 }
