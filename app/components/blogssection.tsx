@@ -79,13 +79,13 @@ export default async function BlogsSection() {
                 <div className="absolute blog-category">
                   {item.category}
                 </div>
-                <h4 className="font-secondary  md:text-[22px]  lowercase text-[16px] my-3 md:m-0">
+                <h4 className="font-secondary md:text-[22px] lowercase text-[16px] my-3 md:m-0">
                   {item.title}
                 </h4>
               </div>
-              <p className="pb-2 font-thin leading-[30px] lg:pb-[10px]">
-                <MyPortableText value={item.body} />
-              </p>
+              <div className="blog-body text-sm text-gray-600 mt-2 line-clamp-3">
+                    <MyPortableText value={item.body} />
+                  </div>
               <span>{formatDate(item.date)}</span>
             </div>
           </Link>
