@@ -16,9 +16,10 @@ async function getData(slug:string) {
     "date":_createdAt,
     body
 }[0]`;
-    const data = await client.fetch(query);
 
-    return data;
+  const data = await client.fetch(query);
+  console.log(data);
+  return data;
 }
 
 export default async function BlogPost({ params }: { params: { slug: string } }) {

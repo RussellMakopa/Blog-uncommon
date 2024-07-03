@@ -19,6 +19,7 @@ export default function Banner({mainImage, title, date, tag}:{mainImage:string, 
           alt="Nedbank Innovation Hub"
           width={238}
           height={197}
+          priority
           className="pt-[4%] pl-[4%]"
         />
         <div className="absolute bottom-0 w-full bg-black bg-opacity-70 p-5">
