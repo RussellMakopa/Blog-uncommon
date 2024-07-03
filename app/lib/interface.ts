@@ -9,6 +9,8 @@ export interface simpleBlogCard{
 }
 
 export interface fullBlock{
+    body: any;
+    mainImage: any;
     currentSlug:string;
     content:any;
     title:string;
