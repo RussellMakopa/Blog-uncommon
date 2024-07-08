@@ -19,6 +19,7 @@ export interface fullBlock{
     tag:string;
     smallDescription:string;
     category: any;
+    conclusion: any;
 }
 
 export interface simpleBlogCard {

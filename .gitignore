@@ -4,3 +4,4 @@ cache
 ../.next/static/webpack
 ../.next/cache/images
 ../.next/cache/fetch-cache
+.vercel
