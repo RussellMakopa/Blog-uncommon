@@ -83,7 +83,7 @@ export default async function BlogsSection() {
                   {item.title}
                 </h4>
               </div>
-              <div className="blog-body text-sm text-gray-600 mt-2 line-clamp-3">
+              <div className="blog-body text-sm text-gray-600 mt-2 font-primary line-clamp-3">
                     <MyPortableText value={item.body} />
                   </div>
               <span>{formatDate(item.date)}</span>

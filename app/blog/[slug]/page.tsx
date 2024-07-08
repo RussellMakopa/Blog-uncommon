@@ -5,19 +5,70 @@ import Paragraph from "@/app/components/styled/paragraph";
 import Conclusion from "./conclusion";
 import MyPortableText from "@/app/components/PortableText";
 
-async function getData(slug:string) {
-  const query = `
-     *[_type == 'post' && slug.current == '${slug}']{
-  "currentSlug":slug.current,
-    title,
-    mainImage,
-    author,
-    "category":categories[0]->title,
-    "date":_createdAt,
-    body
-}[0]`;
 
-  const data = await client.fetch(query);
+async function getData(slug: string) {
+  const query = `
+    *[_type == "post" && slug.current == $slug][0]{
+      "currentSlug": slug.current,
+      title,
+      mainImage,
+      author,
+      "category": categories[0]->title,
+      "date": _createdAt,
+      body[]{
+        ...,
+        // Handle paragraphs
+        _type == "block" => {
+          ...,
+          children[]{
+            ...,
+            // Handle marks (strong, em, underline, link)
+            markDefs[]{
+              ...,
+              _type == "link" => {
+                "href": @.href
+              }
+            }
+          }
+        },
+        // Handle images
+        _type == "image" => {
+          ...,
+          asset->
+        },
+        // Handle unordered lists
+        _type == "ul" => {
+          ...,
+          children[]{
+            ...,
+            // Handle list items
+            _type == "listItem" => {
+              ...,
+              children[]{
+                ...
+              }
+            }
+          }
+        },
+        // Handle ordered lists
+        _type == "ol" => {
+          ...,
+          children[]{
+            ...,
+            // Handle list items
+            _type == "listItem" => {
+              ...,
+              children[]{
+                ...
+              }
+            }
+          }
+        }
+      }
+    }`;
+  
+    const params = { slug };
+  const data = await client.fetch(query, params);
   console.log(data);
   return data;
 }

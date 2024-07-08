@@ -1,5 +1,16 @@
 {
-  "node": {},
+  "node": {
+    "cd44086c48c7d3144adbd837655642decda868a6": {
+      "workers": {
+        "app/blog/[slug]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Ftkflare%2FDesktop%2FBlog-uncommon%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%22revalidateRootLayout%22%5D%5D%5D&__client_imported__=true!",
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Ftkflare%2FDesktop%2FBlog-uncommon%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%22revalidateRootLayout%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/blog/[slug]/page": "action-browser",
+        "app/page": "action-browser"
+      }
+    }
+  },
   "edge": {},
-  "encryptionKey": "e3XtsnTcIF/AtrpQ1cnIhju3sp/XnMiBQ/HfPWZwPXg="
+  "encryptionKey": "YcrMrD1U9imSTOOXsJ5XpLBqFU5D8iBaPitFP5/P2IY="
 }

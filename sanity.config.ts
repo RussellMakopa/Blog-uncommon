@@ -1,19 +1,33 @@
-import { visionTool } from "@sanity/vision"
-import { structureTool } from "sanity/structure"
-import { schemaTypes } from "./sanity/schemaTypes"
-import { defineConfig } from "sanity"
+'use client'
 
+import { visionTool } from '@sanity/vision';
+import { defineConfig } from 'sanity';
+import { structureTool } from 'sanity/structure';
+import { apiVersion, dataset, projectId } from './sanity/env';
+import { schema } from './sanity/schema';
+
+import MyLogo from './app/components/StudioLogo';
+// import StudioNavbar from './components/StudioNavbar'; // Import your custom navbar
 
 export default defineConfig({
-name: "default",
-title: "blog-uncommon",
-
-
-projectId: "3b981aq7",
-dataset: "production",
-
-plugins: [structureTool(), visionTool()],
-schema: {
-  types: schemaTypes,
-},
-})
+  basePath: '/blog/studio',
+  projectId,
+  dataset,
+  schema,
+  plugins: [
+    structureTool(),
+    visionTool({ defaultApiVersion: apiVersion }),
+  ],
+  studio: {
+    components: {
+      logo: MyLogo,
+    },
+  },
+  // Import global CSS file for consistent styling
+  styles: [
+    {
+      name: 'custom-styles',
+      path: './app/globals.css'
+    }
+  ],
+});

@@ -584,9 +584,21 @@ video {
 .z-\[99\] {
   z-index: 99;
 }
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .mb-0 {
   margin-bottom: 0px;
@@ -785,6 +797,12 @@ video {
 .resize {
   resize: both;
 }
+.list-decimal {
+  list-style-type: decimal;
+}
+.list-disc {
+  list-style-type: disc;
+}
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -844,6 +862,9 @@ video {
 }
 .border-2 {
   border-width: 2px;
+}
+.border-l-4 {
+  border-left-width: 4px;
 }
 .border-solid {
   border-style: solid;
@@ -956,6 +977,9 @@ video {
 .text-center {
   text-align: center;
 }
+.font-bold {
+  font-family: Chillax-Bold;
+}
 .font-demibold {
   font-family: AvenirNext-DemiBold;
 }
@@ -998,8 +1022,17 @@ video {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+.font-bold {
+  font-weight: 700;
+}
+.font-semibold {
+  font-weight: 600;
+}
 .lowercase {
   text-transform: lowercase;
+}
+.italic {
+  font-style: italic;
 }
 .leading-\[30px\] {
   line-height: 30px;
@@ -1017,6 +1050,9 @@ video {
 .text-primary {
   --tw-text-opacity: 1;
   color: rgb(7 71 161 / var(--tw-text-opacity));
+}
+.underline {
+  text-decoration-line: underline;
 }
 .opacity-0 {
   opacity: 0;
@@ -1092,23 +1128,63 @@ video {
   src: url(/_next/static/media/Chillax-Bold.aebcf9a4.ttf) format("truetype");
   display: swap;
 }
-
-
-header {
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.75);
-  transition: all 0.3s ease-in-out;
+body, .sanity-studio {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+  font-family: 'AvenirNext-Regular', sans-serif !important;
+  z-index: 1;
 }
+
+.sanity-studio .navbar, .sanity-studio .navbar__brand {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.sanity-studio .content {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+}
+
+.sanity-studio .button {
+  background-color: #0747A1 !important;
+  color: #ffffff !important;
+}
+
+.header, .headroom--pinned header {
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  transition: all 0.3s ease-in-out !important;
+  z-index: 99999 !important;
+}
+
 .headroom--pinned {
   z-index: 1000 !important;
 }
+
 .headroom--pinned header {
   margin-top: 0 !important;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out !important;
   z-index: 1000 !important;
 }
 
+/* Additional styles to ensure consistency */
+.sanity-studio .sidebar {
+  background-color: #ffffff !important;
+}
+
+.sanity-studio .main-area {
+  background-color: #ffffff !important;
+}
+
+.sanity-studio .navbar__item {
+  color: #0747A1 !important;
+}
+
+/* Ensure all components follow the light theme */
+.sanity-studio .component {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+}
 
 
 .ctn-preloader {
@@ -1333,12 +1409,76 @@ footer a:hover {
   padding: 12px 34px 12px 34px;
   background: #0747A1;
   border-radius: 9999px;
-  font-family: "Avenir", sans-serif;
+  font-family: "AvenirNext-Regular", sans-serif;
   line-height: 21.86px;
   color: white;
   top: 30px;
   left: 30px;
 
+}
+
+.blog-title {
+  font-family: 'Chillax', sans-serif;
+  font-size: 22px;
+  line-height: 30.8px;
+  text-align: left;
+  color: #000000;
+  max-width: 100%;
+}
+
+.blog-body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+  color: #000000;
+  max-width: 100%;
+}
+
+.blog-date {
+  font-family: 'Avenir', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+  color: #000000;
+  max-width: 100%;
+}
+
+.blog-body img {
+  max-width: 100%;
+  height: auto;
+}
+
+.blog-body h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blog-body h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-body h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-body p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-body a {
+  color: #0747A1;
+  text-decoration: underline;
 }
 
 .placeholder\:text-light::placeholder {
