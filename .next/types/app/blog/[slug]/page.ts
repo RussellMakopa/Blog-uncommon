@@ -1,4 +1,4 @@
-// File: /Users/tkflare/Desktop/Blog-uncommon/app/blog/[slug]/page.tsx
+// File: C:\Users\russe\OneDrive\Desktop\Blog-uncommon\app\blog\[slug]\page.tsx
 import * as entry from '../../../../../app/blog/[slug]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

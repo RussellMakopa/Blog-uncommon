@@ -76,7 +76,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
       <div className="px-[10%] blog-body">
         <MyPortableText value={data.body} />
       </div>
-      <div className="p-[5%]">
+      <div className="p-[5%] text-justify">
         <Conclusion conclusionText={data.conclusion} />
       </div>
     </>

@@ -23,10 +23,22 @@ const Conclusion: React.FC<ConclusionProps> = ({ conclusionText }) => {
       </div>
       <h4>Conclusion</h4>
       <div className="flex flex-col gap-4">
-      <MyPortableText value={conclusionText} />
+        <MyPortableText value={conclusionText} />
       </div>
+      <img 
+        src="/images/shapes2.png"  
+        className="absolute bottom-[5%] right-[5%] w-16 h-16 object-cover transform scale-y-[-1]" 
+        style={{
+          width: '238.01px', 
+          height: 'auto',          
+        }}
+      />
     </div>
   );
 };
 
 export default Conclusion;
+
+
+
+

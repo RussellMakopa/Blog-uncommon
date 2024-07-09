@@ -569,6 +569,21 @@ video {
 .top-3 {
   top: 0.75rem;
 }
+.bottom-\[\] {
+  bottom: ;
+}
+.bottom-\[5\] {
+  bottom: 5;
+}
+.bottom-\[5\%\] {
+  bottom: 5%;
+}
+.right-\[5\] {
+  right: 5;
+}
+.right-\[5\%\] {
+  right: 5%;
+}
 .z-\[-2\] {
   z-index: -2;
 }
@@ -648,6 +663,12 @@ video {
 .mt-\[40px\] {
   margin-top: 40px;
 }
+.mr-10 {
+  margin-right: 2.5rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
 .line-clamp-3 {
   overflow: hidden;
   display: -webkit-box;
@@ -678,6 +699,9 @@ video {
 .h-10 {
   height: 2.5rem;
 }
+.h-16 {
+  height: 4rem;
+}
 .h-\[100dvh\] {
   height: 100dvh;
 }
@@ -707,6 +731,9 @@ video {
 }
 .w-10 {
   width: 2.5rem;
+}
+.w-16 {
+  width: 4rem;
 }
 .w-5 {
   width: 1.25rem;
@@ -746,6 +773,9 @@ video {
 }
 .flex-1 {
   flex: 1 1 0%;
+}
+.flex-auto {
+  flex: 1 1 auto;
 }
 .origin-top-right {
   transform-origin: top right;
@@ -789,6 +819,14 @@ video {
 .scale-\[0\.75\] {
   --tw-scale-x: 0.75;
   --tw-scale-y: 0.75;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.scale-y-0 {
+  --tw-scale-y: 0;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.scale-y-\[-1\] {
+  --tw-scale-y: -1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .transform {
@@ -887,60 +925,6 @@ video {
 .bg-transparent {
   background-color: #00000000;
 }
-.bg-gradient-to-b {
-  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-}
-.from-\[rgba\(49\2c 84\2c 44\2c 0\)\] {
-  --tw-gradient-from: rgba(49,84,44,0) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgba(49, 84, 44, 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-.from-\[rgba\(49\2c 84\2c 44\2c 0\.1\)\] {
-  --tw-gradient-from: rgba(49,84,44,0.1) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgba(49, 84, 44, 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-.from-\[rgba\(237\2c 244\2c 236\2c 0\.1\)\] {
-  --tw-gradient-from: rgba(237,244,236,0.1) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgba(237, 244, 236, 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-.from-transparent {
-  --tw-gradient-from: #00000000 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-.via-transparent {
-  --tw-gradient-to: rgb(0 0 0 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), #00000000 var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-.to-\[rgba\(16\2c 71\2c 52\2c 0\)\] {
-  --tw-gradient-to: rgba(16,71,52,0) var(--tw-gradient-to-position);
-}
-.to-\[rgba\(16\2c 71\2c 52\2c 0\.8\)\] {
-  --tw-gradient-to: rgba(16,71,52,0.8) var(--tw-gradient-to-position);
-}
-.to-\[rgba\(16\2c 71\2c 52\2c 5\)\] {
-  --tw-gradient-to: rgba(16,71,52,5) var(--tw-gradient-to-position);
-}
-.to-\[rgba\(16\2c 71\2c 52\2c 1\)\] {
-  --tw-gradient-to: rgba(16,71,52,1) var(--tw-gradient-to-position);
-}
-.to-\[\#000a07\] {
-  --tw-gradient-to: #000a07 var(--tw-gradient-to-position);
-}
-.to-\[\#0a0006\] {
-  --tw-gradient-to: #0a0006 var(--tw-gradient-to-position);
-}
-.to-\[rgba\(16\2c 71\2c 52\2c 0\.5\)\] {
-  --tw-gradient-to: rgba(16,71,52,0.5) var(--tw-gradient-to-position);
-}
-.to-\[rgba\(0\2c 0\2c 0\2c 0\.9\)\] {
-  --tw-gradient-to: rgba(0,0,0,0.9) var(--tw-gradient-to-position);
-}
-.to-black {
-  --tw-gradient-to: #000000 var(--tw-gradient-to-position);
-}
 .bg-cover {
   background-size: cover;
 }
@@ -1023,6 +1007,9 @@ video {
 }
 .text-center {
   text-align: center;
+}
+.text-justify {
+  text-align: justify;
 }
 .font-bold {
   font-family: Chillax-Bold;
