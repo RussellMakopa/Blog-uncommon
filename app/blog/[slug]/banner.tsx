@@ -24,7 +24,7 @@ export default function Banner({mainImage, title, date, tag}:{mainImage:string, 
           priority
           className="pt-[4%] pl-[4%]"
         />
-        <div className="absolute bottom-0 w-full p-5 pl-[5%]">
+        <div className="absolute bottom-0 w-full p-5 pl-[4%]">
           <div className="min-w-[130px] w-max px-10 flex items-center justify-center bg-primary text-light rounded-[29px] text-md font-demibold py-3">
             <span>{tag}</span>
           </div>
