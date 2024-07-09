@@ -5,3 +5,4 @@ cache
 ../.next/cache/images
 ../.next/cache/fetch-cache
 .vercel
+.DS_Store
