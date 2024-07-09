@@ -47,58 +47,58 @@ async function fetchOtherPosts(slug: string) {
 // Function to fetch the current post
 async function fetchCurrentPost(slug: string) {
   const query = `
-    *[_type == "post" && slug.current == $slug][0]{
-      "currentSlug": slug.current,
-      title,
-      mainImage,
-      author,
-      "category": categories[0]->title,
-      "date": _createdAt,
-      body[]{
+  *[_type == "post" && slug.current == $slug][0]{
+    "currentSlug": slug.current,
+    title,
+    mainImage,
+    author,
+    "category": categories[0]->title,
+    "date": _createdAt,
+    body[]{
+      ...,
+      _type == "block" => {
         ...,
-        _type == "block" => {
+        children[]{
           ...,
-          children[]{
+          markDefs[]{
             ...,
-            markDefs[]{
-              ...,
-              _type == "link" => {
-                "href": @.href
-              }
-            }
-          }
-        },
-        _type == "image" => {
-          ...,
-          asset->
-        },
-        _type == "ul" => {
-          ...,
-          children[]{
-            ...,
-            _type == "listItem" => {
-              ...,
-              children[]{
-                ...
-              }
-            }
-          }
-        },
-        _type == "ol" => {
-          ...,
-          children[]{
-            ...,
-            _type == "listItem" => {
-              ...,
-              children[]{
-                ...
-              }
+            _type == "link" => {
+              "href": @.href
             }
           }
         }
       },
-      conclusion
-    }`;
+      _type == "image" => {
+        ...,
+        asset->
+      },
+      _type == "ul" => {
+        ...,
+        children[]{
+          ...,
+          _type == "listItem" => {
+            ...,
+            children[]{
+              ...
+            }
+          }
+        }
+      },
+      _type == "ol" => {
+        ...,
+        children[]{
+          ...,
+          _type == "listItem" => {
+            ...,
+            children[]{
+              ...
+            }
+          }
+        }
+      }
+    },
+    conclusion
+  }`;
 
   const params = { slug };
 

@@ -4,7 +4,7 @@ interface bannerProps {}
 
 const Banner = ({}: bannerProps): JSX.Element => {
   return (
-    <div className="p-[5%] pt-[4%] md:pb-[2.5%]  lg:h-auto  lg:pb-[1.2%] text-center flex flex-col gap-5  items-center justify-center ">
+    <div className="p-[5%] pt-[4%] md:pb-[2.5%] lg:h-auto lg:pb-[1.2%] text-center flex flex-col gap-5  items-center justify-center mt-[-5%]">
       <h1 className="font-secondary text-5xl lg:text-[64px] mb-0 mt-[40px] md:mt-0">
         notes from the field
       </h1>

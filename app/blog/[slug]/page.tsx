@@ -25,7 +25,7 @@ export default async function BlogPost({ params }: { params: { slug: string } })
         <Conclusion conclusionText={currentPost.conclusion} />
       </div>
       <h2 className="text-center text-4xl font-bold mb-6 lowercase">Continue Reading</h2>
-      <div className="p-[5%]">
+      <div className="p-[4%]">
         <BlogsSection blogs={displayedPosts} />
       </div>
     </>

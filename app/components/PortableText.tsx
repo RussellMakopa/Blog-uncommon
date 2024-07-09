@@ -5,31 +5,37 @@ import Link from 'next/link';
 const myPortableTextComponents: PortableTextComponents = {
   types: {
     image: ({ value }) => {
-      const width = value.asset?.metadata?.dimensions?.width || 800; // Default width
-      const height = value.asset?.metadata?.dimensions?.height || 600; // Default height
+      const imageUrl = value.asset?.url;
 
-      if (!value.asset || !value.asset.url) {
+      if (!imageUrl) {
         return null; // Or render a placeholder or fallback content
       }
 
       return (
-        <div className="my-4">
+        <div className="my-4 max-sm:max-h-[300px] max-h-[540px] overflow-hidden rounded-[30px]">
           <Image
-            src={value.asset.url}
+            src={imageUrl}
             alt={value.alt || 'Blog image'}
             layout="responsive"
-            width={width}
-            height={height}
-            className="object-cover"
+            width={800} 
+            height={400}
+            className="object-cover rounded-[30px] sm:h-60 md:h-72"
           />
         </div>
       );
     },
+    button: ({ value }) => (
+        <Link href={value.url}>
+        <div className="inline-block blog-category mt-[3%] mb-[3%]">
+          {value.text}
+        </div>
+        </Link>
+    ),
   },
   block: {
-    h1: ({ children }) => <h1 className="text-4xl font-bold my-4">{children}</h1>,
-    h2: ({ children }) => <h2 className="text-3xl font-bold my-3">{children}</h2>,
-    h3: ({ children }) => <h3 className="text-2xl font-bold my-2">{children}</h3>,
+    h1: ({ children }) => <h1 className="text-4xl font-bold my-4 mt-[5%] mb-[5%]">{children}</h1>,
+    h2: ({ children }) => <h2 className="text-3xl font-bold my-3 mt-[5%] mb-[5%]">{children}</h2>,
+    h3: ({ children }) => <h3 className="text-2xl font-bold my-2 mt-[5%] mb-[5%]">{children}</h3>,
     normal: ({ children }) => <p className="my-2">{children}</p>,
     blockquote: ({ children }) => <blockquote className="border-l-4 border-gray-500 pl-4 my-4">{children}</blockquote>,
     // Handling lists
@@ -38,8 +44,8 @@ const myPortableTextComponents: PortableTextComponents = {
     li: ({ children }) => <li className="my-1">{children}</li>,
   },
   listItem: {
-    bullet: ({ children }) => <li className="list-disc pl-4 my-1">{children}</li>,
-    number: ({ children }) => <li className="list-decimal pl-4 my-1">{children}</li>,
+    bullet: ({ children }) => <li className="list-disc pl-4 my-1 ml-[5%]">{children}</li>,
+    number: ({ children }) => <li className="list-decimal pl-4 my-1 ml-[5%]">{children}</li>,
   },
   marks: {
     strong: ({ children }) => <strong className="font-semibold">{children}</strong>,

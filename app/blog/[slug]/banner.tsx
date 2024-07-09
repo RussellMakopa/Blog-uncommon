@@ -24,11 +24,11 @@ export default function Banner({mainImage, title, date, tag}:{mainImage:string, 
           priority
           className="pt-[4%] pl-[4%]"
         />
-        <div className="absolute bottom-0 w-full p-5">
-          <div className="min-w-[130px] w-max px-10 flex items-center justify-center bg-primary text-light rounded-[29px] text-md font-demibold py-3 mb-3">
+        <div className="absolute bottom-0 w-full p-5 pl-[5%]">
+          <div className="min-w-[130px] w-max px-10 flex items-center justify-center bg-primary text-light rounded-[29px] text-md font-demibold py-3">
             <span>{tag}</span>
           </div>
-          <h1 className="text-light text-[35px] md:text-[64px] lowercase font-secondary mb-2">
+          <h1 className="text-light text-[35px] md:text-[64px] lowercase font-secondary mb-2 sm:pr-48 md:max-w-[20ch] leading-none">
             {title} <br />
           </h1>
           <span className="text-light font-primary">{formatDate(date)}</span>
