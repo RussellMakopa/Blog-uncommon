@@ -21,16 +21,16 @@ const Conclusion: React.FC<ConclusionProps> = ({ conclusionText }) => {
           particleColor="#ffffff"
         />
       </div>
-      <h4>Conclusion</h4>
-      <div className="flex flex-col gap-4">
+      <h3>Conclusion</h3>
+      <div className="flex flex-col gap-4 pr-16"> {/* Added right padding to wrap text */}
         <MyPortableText value={conclusionText} />
       </div>
       <img 
         src="/images/shapes2.png"  
-        className="absolute bottom-[5%] right-[5%] w-16 h-16 object-cover transform scale-y-[-1]" 
+        className="absolute bottom-[5%] right-[1%] transform scale-y-[-1]" 
         style={{
-          width: '238.01px', 
-          height: 'auto',          
+          width: '80px', // Adjusted size for smaller image
+          height: 'auto',
         }}
       />
     </div>
@@ -38,7 +38,3 @@ const Conclusion: React.FC<ConclusionProps> = ({ conclusionText }) => {
 };
 
 export default Conclusion;
-
-
-
-

@@ -4,80 +4,29 @@ import Banner from "./banner";
 import Paragraph from "@/app/components/styled/paragraph";
 import Conclusion from "./conclusion";
 import MyPortableText from "@/app/components/PortableText";
+import BlogsSection from "@/app/components/blogssection";
+import { fetchData } from "@/app/components/getAllPosts";
 
-async function getData(slug: string) {
-  const query = `
-    *[_type == "post" && slug.current == $slug][0]{
-      "currentSlug": slug.current,
-      title,
-      mainImage,
-      author,
-      "category": categories[0]->title,
-      "date": _createdAt,
-      body[]{
-        ...,
-        _type == "block" => {
-          ...,
-          children[]{
-            ...,
-            markDefs[]{
-              ...,
-              _type == "link" => {
-                "href": @.href
-              }
-            }
-          }
-        },
-        _type == "image" => {
-          ...,
-          asset->
-        },
-        _type == "ul" => {
-          ...,
-          children[]{
-            ...,
-            _type == "listItem" => {
-              ...,
-              children[]{
-                ...
-              }
-            }
-          }
-        },
-        _type == "ol" => {
-          ...,
-          children[]{
-            ...,
-            _type == "listItem" => {
-              ...,
-              children[]{
-                ...
-              }
-            }
-          }
-        }
-      },
-      conclusion
-    }`;
-
-  const params = { slug };
-  const data = await client.fetch(query, params);
-  console.log(data);
-  return data;
-}
+export const revalidate = 30;
 
 export default async function BlogPost({ params }: { params: { slug: string } }) {
+  const { currentPost, otherPosts } = await fetchData(params.slug);
 
-  const data: fullBlock = await getData(params.slug);
+  // Limit the number of displayed posts to 3 if there are more than 3
+  const displayedPosts = otherPosts.slice(0, 3);
 
   return (
     <>
-      <Banner mainImage={urlFor(data.mainImage).url()} title={data.title} date={data.date} tag={data.category} />
+      <Banner mainImage={urlFor(currentPost.mainImage).url()} title={currentPost.title} date={currentPost.date} tag={currentPost.category} />
       <div className="px-[10%] blog-body">
-        <MyPortableText value={data.body} />
+        <MyPortableText value={currentPost.body} />
       </div>
       <div className="p-[5%] text-justify">
-        <Conclusion conclusionText={data.conclusion} />
+        <Conclusion conclusionText={currentPost.conclusion} />
+      </div>
+      <h2 className="text-center text-4xl font-bold mb-6 lowercase">Continue Reading</h2>
+      <div className="p-[5%]">
+        <BlogsSection blogs={displayedPosts} />
       </div>
     </>
   );

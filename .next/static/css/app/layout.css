@@ -545,6 +545,9 @@ video {
 .bottom-5 {
   bottom: 1.25rem;
 }
+.bottom-\[5\%\] {
+  bottom: 5%;
+}
 .left-0 {
   left: 0px;
 }
@@ -560,6 +563,9 @@ video {
 .right-5 {
   right: 1.25rem;
 }
+.right-\[5\%\] {
+  right: 5%;
+}
 .top-0 {
   top: 0px;
 }
@@ -569,20 +575,11 @@ video {
 .top-3 {
   top: 0.75rem;
 }
-.bottom-\[\] {
-  bottom: ;
+.right-\[0\%\] {
+  right: 0%;
 }
-.bottom-\[5\] {
-  bottom: 5;
-}
-.bottom-\[5\%\] {
-  bottom: 5%;
-}
-.right-\[5\] {
-  right: 5;
-}
-.right-\[5\%\] {
-  right: 5%;
+.right-\[1\%\] {
+  right: 1%;
 }
 .z-\[-2\] {
   z-index: -2;
@@ -633,6 +630,9 @@ video {
 .mb-5 {
   margin-bottom: 1.25rem;
 }
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
 .mb-7 {
   margin-bottom: 1.75rem;
 }
@@ -657,17 +657,8 @@ video {
 .mt-5 {
   margin-top: 1.25rem;
 }
-.mt-7 {
-  margin-top: 1.75rem;
-}
 .mt-\[40px\] {
   margin-top: 40px;
-}
-.mr-10 {
-  margin-right: 2.5rem;
-}
-.mb-6 {
-  margin-bottom: 1.5rem;
 }
 .line-clamp-3 {
   overflow: hidden;
@@ -774,9 +765,6 @@ video {
 .flex-1 {
   flex: 1 1 0%;
 }
-.flex-auto {
-  flex: 1 1 auto;
-}
 .origin-top-right {
   transform-origin: top right;
 }
@@ -819,10 +807,6 @@ video {
 .scale-\[0\.75\] {
   --tw-scale-x: 0.75;
   --tw-scale-y: 0.75;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.scale-y-0 {
-  --tw-scale-y: 0;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .scale-y-\[-1\] {
@@ -1004,6 +988,9 @@ video {
 }
 .pt-\[6\%\] {
   padding-top: 6%;
+}
+.pr-16 {
+  padding-right: 4rem;
 }
 .text-center {
   text-align: center;
@@ -1711,10 +1698,6 @@ footer a:hover {
     margin-bottom: 15px;
   }
 
-  .lg\:mb-\[10px\] {
-    margin-bottom: 10px;
-  }
-
   .lg\:h-\[50px\] {
     height: 50px;
   }
@@ -1754,10 +1737,6 @@ footer a:hover {
 
   .lg\:flex-row {
     flex-direction: row;
-  }
-
-  .lg\:gap-6 {
-    gap: 1.5rem;
   }
 
   .lg\:gap-8 {

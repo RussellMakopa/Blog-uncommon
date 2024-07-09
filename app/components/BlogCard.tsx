@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { urlFor } from '../lib/sanity';
-import { formatDate } from './blogssection';
 import MyPortableText from './PortableText';
+import { formatDate } from '../lib/formatDate';
 
 interface BlogCardProps {
   title: string;

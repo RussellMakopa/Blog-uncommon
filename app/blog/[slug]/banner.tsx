@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react';
 import {clsx} from 'clsx';
-import { formatDate } from '@/app/components/blogssection';
+import { formatDate } from '@/app/lib/formatDate';
 
 export default function Banner({mainImage, title, date, tag}:{mainImage:string, title:string, date:string, tag:string}) {
   const imageUrl = mainImage;
