@@ -2,6 +2,7 @@ import React from 'react';
 import Paragraph from '@/app/components/styled/paragraph';
 import { SparklesCore } from '@/app/components/ui/sparkles';
 import MyPortableText from '@/app/components/PortableText';
+import Image from 'next/image';
 
 interface ConclusionProps {
   conclusionText: string;
@@ -22,17 +23,19 @@ const Conclusion: React.FC<ConclusionProps> = ({ conclusionText }) => {
         />
       </div>
       <h4 className='text-3xl font-secondary lowercase'>Conclusion</h4>
-      <div className="flex flex-col gap-4 pr-28"> {/* Added right padding to wrap text */}
+      <div className="flex flex-col gap-4 pr-10 sm:pr-28 md:pr-32"> {/* Adjusted right padding for smaller devices */}
         <MyPortableText value={conclusionText} />
       </div>
-      <img 
-        src="/images/shapes2.png"  
-        className="absolute bottom-[5%] right-[1%] transform scale-y-[-1]" 
-        style={{
-          width: '200px', // Adjusted size for smaller image
-          height: 'auto',
-        }}
-      />
+      <div className="absolute bottom-[5%] right-[1%] transform scale-y-[-1] z-0">
+        <Image 
+          src="/images/shapes2.png"
+          alt="decorative shape"
+          className="w-12 sm:w-20 md:w-32" // Tailwind responsive classes
+          width={150}
+          height={150}
+          priority
+        />
+      </div>
     </div>
   );
 };

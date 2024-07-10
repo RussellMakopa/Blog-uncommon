@@ -16,10 +16,10 @@ const myPortableTextComponents: PortableTextComponents = {
           <Image
             src={imageUrl}
             alt={value.alt || 'Blog image'}
-            layout="responsive"
             width={800} 
             height={400}
-            className="object-cover rounded-[30px] sm:h-60 md:h-72"
+            priority
+            className="object-cover rounded-[30px] w-full"
           />
         </div>
       );
@@ -33,7 +33,7 @@ const myPortableTextComponents: PortableTextComponents = {
     ),
   },
   block: {
-    h1: ({ children }) => <h1 className="text-4xl font-bold my-4 mt-[5%] mb-[5%]">{children}</h1>,
+    h1: ({ children }) => <h1 className="text-4xl font-bold my-4 mt-[5%] mb-[5%] max-w-full break-words whitespace-normal">{children}</h1>,
     h2: ({ children }) => <h2 className="text-3xl font-bold my-3 mt-[5%] mb-[5%]">{children}</h2>,
     h3: ({ children }) => <h3 className="text-2xl font-bold my-2 mt-[5%] mb-[5%]">{children}</h3>,
     normal: ({ children }) => <p className="my-2">{children}</p>,
